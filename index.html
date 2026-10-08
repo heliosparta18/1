@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buat Kamu💜🌸</title>
+  
+  <!-- Google Fonts: Poppins & Caveat/Dancing Script untuk kesan manis & aesthetic -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Nunito:wght@400;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- File CSS Terpisah -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- 1. OVERLAY ANGIN SEPOI-SEPOI & KELOPAK BUNGA -->
+  <!-- Canvas untuk efek angin sepoi-sepoi yang realistis -->
+  <canvas id="windCanvas"></canvas>
+  
+  <!-- Container untuk kelopak & bunga melayang dari kanan ke kiri -->
+  <div id="floatingPetalsContainer" class="floating-petals-container"></div>
+
+  <!-- Background Orbs Glowing Lilac/Ungu -->
+  <div class="bg-glow orb-1"></div>
+  <div class="bg-glow orb-2"></div>
+  <div class="bg-glow orb-3"></div>
+
+  <!-- 2. PEMUTAR MUSIK PIRINGAN HITAM (KANAN ATAS) -->
+  <div class="music-player-widget" id="musicWidget" title="Klik untuk putar / jeda musik 💜">
+    <!-- Efek Catatan Nada & Kilau yang Keluar Saat Berputar -->
+    <div class="notes-burst-container" id="notesContainer"></div>
+
+    <div class="turntable-box">
+      <!-- Jarum Pemutar Piringan (Tonearm) -->
+      <div class="tonearm" id="tonearm">
+        <div class="arm-base"></div>
+        <div class="arm-body"></div>
+        <div class="arm-head"></div>
+      </div>
+
+      <!-- Piringan Hitam Vinyl yang Muter-Muter -->
+      <div class="vinyl-disc" id="vinylDisc">
+        <div class="vinyl-groove"></div>
+        <div class="vinyl-label">
+          <span class="vinyl-icon">🎵</span>
+          <div class="vinyl-center-hole"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Label Status Musik Kecil & Manis -->
+    <div class="music-status-pill" id="musicStatusPill">
+      <span class="music-wave-icon">🎶</span>
+      <span class="music-status-text" id="musicStatusText">Putar Musik 💜</span>
+    </div>
+
+    <!-- Audio Element Menggunakan Lagu di Folder Ini -->
+    <audio id="bgMusic" src="ssstik.io_1791475752648.mp3" loop preload="auto"></audio>
+  </div>
+
+
+  <!-- 3. KOTAK-->
+  
+  <main class="main-container">
+    
+    <!-- Header Hiasan Atas -->
+    <div class="top-badge">
+      <span class="sparkle">✨</span>
+      <span>Spesial Buat Kamu</span>
+      <span class="sparkle">✨</span>
+    </div>
+
+    <!-- Kartu Pesan Manis (Sudut Melengkung / Rounded) -->
+    <div class="sweet-card" id="sweetCard">
+      
+      <!-- Dekorasi Pita & Bunga di Sudut Kartu -->
+      <div class="card-corner-decor top-left">🌸</div>
+      <div class="card-corner-decor top-right">🎀</div>
+      <div class="card-corner-decor bottom-left">🪻</div>
+      <div class="card-corner-decor bottom-right">💜</div>
+
+      <!-- Indikator Slide & Progres -->
+      <div class="card-header">
+        <div class="slide-indicator-badge" id="slideCategoryBadge">
+          🌸 Semangat Hari Ini 🌸
+        </div>
+        <div class="slide-counter-wrapper">
+          <span id="currentSlideNum">1</span> / <span id="totalSlidesNum">4</span>
+        </div>
+      </div>
+
+      <!-- Wrapper Slide-Slide Konten -->
+      <div class="slides-viewport">
+        <div class="slides-track" id="slidesTrack">
+
+          <!-- ============================== -->
+          <!-- SLIDE 1: UCAPAN SEMANGAT AKTIVITAS -->
+          <!-- ============================== -->
+          <section class="slide-item" data-category="🌸 Semangat Hari Ini 🌸">
+            <div class="slide-icon-burst">
+              <span class="pulse-emoji">🧸</span>
+              <span class="sub-emoji">✨</span>
+            </div>
+            <h2 class="slide-title">Semangat Beraktivitas Sayang! 💜</h2>
+            <div class="slide-divider">
+              <span class="line"></span>
+              <span class="dot">🌸</span>
+              <span class="line"></span>
+            </div>
+            <p class="slide-message">
+              Hai sayangku cintakuuu!! cuma mau ngingetin kalau kamu itu orang yang luar biasa hebat. Apapun tugas, kerjaan, atau aktivitas yang lagi kamu jalanin hari ini, semoga semuanya dimudahkan dan dilancarkan yaa! 🌷
+            </p>
+            <p class="slide-message secondary">
+              Jangan lupa senyum, jangan sampai telat makan, dan kalo kamu udah ngerasa capek, istirahat sebentar yaa sayangg. Jangan dipaksain yaa sayanggg... Kamu selalu punya aku yang doain dan dukung kamu setiap detik! 🥰✨
+            </p>
+            <div class="slide-footer-note">
+              <span>🧋 Jangan lupa banyak minum air putih yaa! 💜</span>
+            </div>
+          </section>
+
+          <!-- ============================== -->
+          <!-- SLIDE 2: KATA-KATA MUTIARA & APRESIASI -->
+          <!-- ============================== -->
+          <section class="slide-item" data-category="✨ Quotes of the day ✨">
+            <div class="slide-icon-burst">
+              <span class="pulse-emoji">🌷</span>
+              <span class="sub-emoji">💎</span>
+            </div>
+            <h2 class="slide-title">Kamu Begitu Berharga di Mataku ✨</h2>
+            <div class="slide-divider">
+              <span class="line"></span>
+              <span class="dot">🤍</span>
+              <span class="line"></span>
+            </div>
+            <p class="slide-message">
+              "Di antara milyaran bintang di angkasa dan ribuan keindahan di dunia, kehadiran kamu tetaplah anugerah yang paling indah dan paling aku syukuri setiap hari, emm agak alay tapi oke" 💐
+            </p>
+            <p class="slide-message secondary">
+              Terima kasih ya sudah bertahan sampai sejauh ini, ya kalo dipikir pikir ini udah tiga bulan semenjak kita balikan kuat ya gitu, kaya ga kerasa aja tiba" udah 3 bulan aja biasanya juga lama kan, ya aku cuma mau makasih aja buat selama ini yang kamu lakuin ke aku walaupun kamunya juga ada resenya dikit tapi its fun, seru aja gitu selama bareng adee, semangatt yaa ngadepinn cowoo ngeselinn dan gantengg kayaa mass eaakk
+            </p>
+            <div class="slide-footer-note">
+              <span>🤍 Dunia beruntung punya kamu, dan aku jauh lebih beruntung! 🌸</span>
+            </div>
+          </section>
+
+          <!-- ============================== -->
+          <!-- SLIDE 3: GOMBALAN MANIS & BIKIN SALTING -->
+          <!-- ============================== -->
+          <section class="slide-item" data-category="🙈 flirting tipis tipis 🙈">
+            <div class="slide-icon-burst">
+              <span class="pulse-emoji">🙈</span>
+              <span class="sub-emoji">💖</span>
+            </div>
+            <h2 class="slide-title">Ikan, ikan apa yang berhenti sementara?</h2>
+            <div class="slide-divider">
+              <span class="line"></span>
+              <span class="dot">💜</span>
+              <span class="line"></span>
+            </div>
+            <p class="slide-message gombal-text">
+              Ikan pause jiakahahaha lucuu bangett, bercandaa ikann yang gabisaa berhentii?? <br>
+              <strong>ikant stop loving u and ikant stop falling in love with u</strong>
+            </p>
+            <p class="slide-message secondary">
+              awan, awan apa yang bikin bahagia? a wanna be with you forever, sayang aku mau selalu ada di samping kamu, nemenin kamu, dan bikin kamu bahagia setiap hari, ngga tiap hari sih ya kalo kamunya cape sama duniamu silahkan kasih tau aku keluh kesahmu yawww
+              </p>
+          </section>
+
+          <!-- ============================== -->
+          <!-- SLIDE 4: KATA-KATA RINGAN YANG MELULUHKAN HATI -->
+          <!-- ============================== -->
+          <section class="slide-item" data-category="i proud of u 💜">
+            <div class="slide-icon-burst">
+              <span class="pulse-emoji">🫂</span>
+              <span class="sub-emoji">🌸</span>
+            </div>
+            <h2 class="slide-title">Ada Aku yang Selalu Bangga Padamu 💜</h2>
+            <div class="slide-divider">
+              <span class="line"></span>
+              <span class="dot">✨</span>
+              <span class="line"></span>
+            </div>
+            <p class="slide-message">
+              Sayang... kalau hari ini terasa berat, atau ada hal yang bikin kamu sedih, kamu nggak perlu nanggung semuanya sendirian yaa. Ada aku di sini yang selalu siap dengerin keluh kesahmu, siap jadi rumah tempat kamu pulang. 🤍
+            </p>
+            <p class="slide-message secondary">
+              aku bangga banget sama kamu walaupun banyak aktivitas masih sempet ngeladenin yang aku minta call atau gimana gitu, kadang ribut gegara sama sama cape, kadang ribut gegeara ada yang salah paham, seru sih cuma kalo terus" an gaasik namanya apalagi didiemin gitu aduhai gaenak kali, i proud of u sayang, lakuin apa yang kamu pengen lakuin asal positif ya sayangg💜
+            </p>
+            
+            <!-- Tombol Interaktif Peluk Hangat -->
+            <div class="hug-button-container">
+              <button class="btn-hug" id="btnHug">
+                <span class="hug-icon">🫂</span>
+                <span>Pencet ini langsung aku kirim hug jauh kalo kamu lagi cape💖</span>
+              </button>
+              <div class="hug-feedback" id="hugFeedback">
+                hug jauh telah berhasil dikirim walau gaada rasanya, I love you more cantik!💜✨🥰
+              </div>
+            </div>
+          </section>
+
+        </div>
+      </div>
+
+      <!-- Navigasi Tombol & Titik Dots -->
+      <div class="card-navigation">
+        <button class="nav-btn prev-btn" id="prevBtn" aria-label="Slide Sebelumnya">
+          <span class="btn-arrow">❮</span>
+          <span class="btn-text">Kembali</span>
+        </button>
+
+        <div class="dots-container" id="dotsContainer">
+          <span class="dot-indicator active" data-slide="0"></span>
+          <span class="dot-indicator" data-slide="1"></span>
+          <span class="dot-indicator" data-slide="2"></span>
+          <span class="dot-indicator" data-slide="3"></span>
+        </div>
+
+        <button class="nav-btn next-btn" id="nextBtn" aria-label="Slide Selanjutnya">
+          <span class="btn-text">Lanjut</span>
+          <span class="btn-arrow">❯</span>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Catatan Manis Bawah -->
+    <div class="footer-love-note">
+      <span>Dibuat dengan sepenuh hati & cinta cuma untuk kamu seorang 💜✨🌸</span>
+    </div>
+
+  </main>
+
+
+  <!-- ========================================== -->
+  <!-- 4. BUNGA JEJER UNGU & PUTIH BERGERAK DARI KANAN KE KIRI -->
+  <!-- ========================================== -->
+  <div class="flower-marquee-section">
+    <div class="flower-marquee-track" id="flowerMarqueeTrack">
+      <!-- Deretan Bunga Set 1 -->
+      <div class="flower-row-set" id="flowerSet1">
+        <!-- SVG Bunga Ungu & Putih yang beragam & detail -->
+      </div>
+      <!-- Deretan Bunga Set 2 (Duplikat untuk looping mulus tanpa putus) -->
+      <div class="flower-row-set" id="flowerSet2" aria-hidden="true">
+        <!-- Terisi otomatis melalui script.js / HTML -->
+      </div>
+    </div>
+  </div>
+
+
+  <!-- File Script Terpisah -->
+  <script src="script.js"></script>
+</body>
+</html>

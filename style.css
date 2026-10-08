@@ -1,0 +1,1081 @@
+/* ==========================================================
+   TEMA KHUSUS: UNGU & BUNGA PUTIH-UNGU ROMANTIS & AESTHETIC
+   SUPER OPTIMIZED UNTUK SEMUA HP & DESKTOP (SMOOTH 60 FPS)
+   ========================================================== */
+
+:root {
+  /* Palet Warna Ungu Romantis & Elegan */
+  --purple-900: #2e1065;
+  --purple-800: #4c1d95;
+  --purple-700: #581c87;
+  --purple-600: #7e22ce;
+  --purple-500: #9333ea;
+  --purple-400: #a855f7;
+  --purple-300: #c084fc;
+  --purple-200: #d8b4fe;
+  --purple-100: #f3e8ff;
+  --purple-50:  #faf5ff;
+  
+  /* Aksen Pink & Putih Lembut */
+  --pink-pastel: #fbcfe8;
+  --pink-soft:   #f472b6;
+  --white:       #ffffff;
+  --white-alpha: rgba(255, 255, 255, 0.92);
+  --glass-border: rgba(216, 180, 254, 0.65);
+  
+  /* Shadow & Glow */
+  --shadow-card: 0 16px 40px rgba(88, 28, 135, 0.22), 0 6px 18px rgba(147, 51, 234, 0.12);
+  --glow-purple: 0 0 24px rgba(168, 85, 247, 0.3);
+  
+  /* Tipografi */
+  --font-main: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-hand: 'Dancing Script', cursive;
+}
+
+/* Reset Standar & Optimasi Render */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  overflow-x: hidden;
+  font-family: var(--font-main);
+  background: linear-gradient(135deg, #1d0739 0%, #36065c 35%, #471a8c 65%, #651f9f 100%);
+  color: var(--purple-900);
+  position: relative;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ==========================================================
+   BACKGROUND GLOW ORBS (Super Optimized - Tanpa Filter Berat)
+   Menggunakan Radial-Gradient Asli yang Sudah Lembut
+   ========================================================== */
+.bg-glow {
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.7;
+  will-change: transform;
+  transform: translateZ(0);
+  animation: pulseGlow 12s ease-in-out infinite alternate;
+}
+
+.orb-1 {
+  width: 380px;
+  height: 380px;
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.45) 0%, rgba(126, 34, 206, 0.12) 50%, transparent 70%);
+  top: -80px;
+  left: -80px;
+}
+
+.orb-2 {
+  width: 440px;
+  height: 440px;
+  background: radial-gradient(circle, rgba(216, 180, 254, 0.4) 0%, rgba(192, 132, 252, 0.1) 50%, transparent 70%);
+  bottom: 60px;
+  right: -100px;
+  animation-delay: -5s;
+}
+
+.orb-3 {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(244, 114, 182, 0.3) 0%, rgba(216, 180, 254, 0.08) 50%, transparent 70%);
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%) translateZ(0);
+  animation-delay: -2.5s;
+}
+
+@keyframes pulseGlow {
+  0%   { transform: translate3d(0, 0, 0) scale(1); opacity: 0.55; }
+  50%  { transform: translate3d(20px, -15px, 0) scale(1.1); opacity: 0.75; }
+  100% { transform: translate3d(-15px, 20px, 0) scale(0.95); opacity: 0.6; }
+}
+
+/* ==========================================================
+   CANVAS ANGIN SEPOI-SEPOI (Ringan & Cepat di HP Kentang)
+   ========================================================== */
+#windCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2;
+  pointer-events: none;
+  transform: translateZ(0);
+}
+
+/* ==========================================================
+   CONTAINER KELOPAK BUNGA MELAYANG (Hardware Accelerated)
+   ========================================================== */
+.floating-petals-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 3;
+  pointer-events: none;
+  overflow: hidden;
+  transform: translateZ(0);
+}
+
+.floating-petal {
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+  will-change: transform, opacity;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  animation-name: floatPetalAcross;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes floatPetalAcross {
+  0% {
+    transform: translate3d(var(--x-start), var(--y-start), 0) rotate(var(--rot-start)) scale(var(--scale));
+    opacity: 0;
+  }
+  8% {
+    opacity: 0.9;
+  }
+  90% {
+    opacity: 0.85;
+  }
+  100% {
+    transform: translate3d(var(--x-end), var(--y-end), 0) rotate(var(--rot-end)) scale(var(--scale));
+    opacity: 0;
+  }
+}
+
+/* ==========================================================
+   PEMUTAR MUSIK PIRINGAN HITAM (KANAN ATAS) - SLIM & COMPACT
+   ========================================================== */
+.music-player-widget {
+  position: fixed;
+  top: 16px;
+  right: 18px;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ease;
+  will-change: transform, opacity;
+}
+
+.music-player-widget:hover {
+  transform: scale(1.06);
+}
+
+/* Saat di-scroll ke bawah: otomatis lebih transparan & compact agar tidak menutupi tulisan */
+.music-player-widget.is-scrolled {
+  opacity: 0.82;
+  transform: scale(0.9);
+}
+
+.music-player-widget.is-scrolled:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.turntable-box {
+  width: 56px;
+  height: 56px;
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1.5px solid rgba(233, 213, 255, 0.6);
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: 0 6px 18px rgba(46, 16, 101, 0.28), inset 0 1px 2px rgba(255, 255, 255, 0.5);
+  transition: all 0.3s ease;
+}
+
+/* Piringan Hitam Vinyl */
+.vinyl-disc {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  position: relative;
+  background: radial-gradient(
+    circle,
+    #9333ea 0%,
+    #7e22ce 15%,
+    #18181b 17%,
+    #27272a 19%,
+    #18181b 23%,
+    #27272a 27%,
+    #18181b 31%,
+    #27272a 36%,
+    #18181b 42%,
+    #27272a 49%,
+    #18181b 56%,
+    #27272a 65%,
+    #18181b 74%,
+    #27272a 84%,
+    #09090b 100%
+  );
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.38), 0 0 8px rgba(168, 85, 247, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+/* Label Tengah Piringan */
+.vinyl-label {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #e9d5ff 0%, #c084fc 50%, #9333ea 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.vinyl-icon {
+  font-size: 8.5px;
+  line-height: 1;
+}
+
+.vinyl-center-hole {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #09090b;
+  border: 0.8px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Jarum Pemutar (Tonearm) */
+.tonearm {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 20px;
+  height: 32px;
+  pointer-events: none;
+  z-index: 10;
+  transform-origin: top right;
+  transform: rotate(-15deg);
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+.arm-base {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #d8b4fe 0%, #7e22ce 100%);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.arm-body {
+  position: absolute;
+  top: 6px;
+  right: 3px;
+  width: 2.4px;
+  height: 25px;
+  background: linear-gradient(to bottom, #f1f5f9 0%, #cbd5e1 70%, #94a3b8 100%);
+  border-radius: 2px;
+  transform-origin: top center;
+  transform: rotate(20deg);
+}
+
+.arm-head {
+  position: absolute;
+  bottom: 0px;
+  left: 1.5px;
+  width: 6.5px;
+  height: 4.5px;
+  background: #a855f7;
+  border-radius: 1.5px;
+}
+
+/* Animasi Putar Saat Lagu Main */
+.music-player-widget.is-playing .vinyl-disc {
+  animation: spinVinyl 3.2s linear infinite;
+}
+
+.music-player-widget.is-playing .tonearm {
+  transform: rotate(18deg);
+}
+
+@keyframes spinVinyl {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* Label Status Musik Ramping */
+.music-status-pill {
+  margin-top: 5px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1.2px solid rgba(216, 180, 254, 0.7);
+  padding: 3px 9px;
+  border-radius: 16px;
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--purple-800);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  box-shadow: 0 3px 10px rgba(76, 29, 149, 0.16);
+  white-space: nowrap;
+  transition: all 0.25s ease;
+}
+
+.music-player-widget.is-playing .music-status-pill {
+  background: linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 100%);
+  border-color: var(--purple-400);
+  box-shadow: 0 3px 12px rgba(168, 85, 247, 0.3);
+}
+
+/* Sembunyikan status pill saat scroll agar tidak menumpuk dengan konten */
+.music-player-widget.is-scrolled .music-status-pill {
+  opacity: 0;
+  max-height: 0;
+  margin-top: 0;
+  padding: 0;
+  pointer-events: none;
+  overflow: hidden;
+  border: none;
+}
+
+/* Partikel Catatan Nada Musik Melayang */
+.notes-burst-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1px;
+  height: 1px;
+  pointer-events: none;
+}
+
+.floating-note {
+  position: absolute;
+  font-size: 15px;
+  color: var(--purple-200);
+  text-shadow: 0 0 6px rgba(216, 180, 254, 0.8);
+  user-select: none;
+  pointer-events: none;
+  animation: floatOutNote 2.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  will-change: transform, opacity;
+  transform: translateZ(0);
+}
+
+@keyframes floatOutNote {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0) scale(0.4) rotate(0deg);
+  }
+  20% {
+    opacity: 1;
+    transform: translate3d(var(--rand-x), var(--rand-y), 0) scale(1.15) rotate(var(--rand-rot));
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(calc(var(--rand-x) * 1.8), calc(var(--rand-y) * 2 - 35px), 0) scale(0.6) rotate(calc(var(--rand-rot) * 2));
+  }
+}
+
+/* ==========================================================
+   KONTEN UTAMA & KARTU KOTAK TIDAK LANCIP (ROUNDED)
+   ========================================================== */
+.main-container {
+  position: relative;
+  z-index: 10;
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 65px 20px 20px 20px;
+  width: 100%;
+}
+
+/* Badge Manis Atas */
+.top-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1.5px solid rgba(233, 213, 255, 0.45);
+  color: var(--purple-100);
+  padding: 8px 22px;
+  border-radius: 50px;
+  font-size: 13.5px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-bottom: 20px;
+  box-shadow: 0 6px 20px rgba(46, 16, 101, 0.22);
+  animation: gentleFloat 4s ease-in-out infinite alternate;
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+@keyframes gentleFloat {
+  0%   { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(0, -5px, 0); }
+}
+
+.top-badge .sparkle {
+  color: #fde047;
+  font-size: 14px;
+}
+
+/* ==========================================================
+   KOTAK KARTU UTAMA (Sudut Melengkung, Tidak Lancip)
+   ========================================================== */
+.sweet-card {
+  width: 100%;
+  max-width: 580px;
+  background: var(--white-alpha);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 32px;
+  border: 2px solid var(--glass-border);
+  box-shadow: var(--shadow-card), inset 0 2px 4px rgba(255, 255, 255, 0.9);
+  padding: 36px 34px 30px 34px;
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+/* Dekorasi Emoji Manis di 4 Sudut Kartu */
+.card-corner-decor {
+  position: absolute;
+  font-size: 20px;
+  opacity: 0.75;
+  user-select: none;
+  pointer-events: none;
+  animation: cornerWiggle 3.5s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+.card-corner-decor.top-left { top: 16px; left: 18px; }
+.card-corner-decor.top-right { top: 16px; right: 18px; animation-delay: -1s; }
+.card-corner-decor.bottom-left { bottom: 16px; left: 18px; animation-delay: -1.5s; }
+.card-corner-decor.bottom-right { bottom: 16px; right: 18px; animation-delay: -2s; }
+
+@keyframes cornerWiggle {
+  0%   { transform: rotate(-5deg) scale(0.95); }
+  100% { transform: rotate(5deg) scale(1.06); }
+}
+
+/* Header di Dalam Kartu */
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1.5px dashed rgba(216, 180, 254, 0.6);
+}
+
+.slide-indicator-badge {
+  background: linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 100%);
+  color: var(--purple-700);
+  font-size: 13px;
+  font-weight: 700;
+  padding: 6px 16px;
+  border-radius: 30px;
+  border: 1.2px solid var(--purple-300);
+  box-shadow: 0 2px 8px rgba(147, 51, 234, 0.1);
+  transition: all 0.3s ease;
+}
+
+.slide-counter-wrapper {
+  background: var(--purple-50);
+  color: var(--purple-600);
+  font-size: 12.5px;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 20px;
+  border: 1px solid var(--purple-200);
+}
+
+/* ==========================================================
+   VIEWPORT & TRACK SLIDES (Super Smooth Hardware Accelerated)
+   ========================================================== */
+.slides-viewport {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  min-height: 280px;
+  display: flex;
+  touch-action: pan-y; /* Memungkinkan scroll vertikal alami tanpa glitch */
+}
+
+.slides-track {
+  display: flex;
+  width: 100%;
+  transition: transform 0.42s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+}
+
+.slide-item {
+  flex: 0 0 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 4px 6px;
+  opacity: 0.3;
+  transform: scale(0.97) translateZ(0);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  will-change: transform, opacity;
+}
+
+.slide-item.active {
+  opacity: 1;
+  transform: scale(1) translateZ(0);
+}
+
+/* Ikon & Judul Slide */
+.slide-icon-burst {
+  position: relative;
+  margin-bottom: 12px;
+}
+
+.pulse-emoji {
+  font-size: 44px;
+  display: inline-block;
+  animation: heartPulse 2.4s infinite ease-in-out;
+  will-change: transform;
+}
+
+.sub-emoji {
+  position: absolute;
+  top: -4px;
+  right: -12px;
+  font-size: 19px;
+  animation: spinSlow 7s linear infinite;
+  will-change: transform;
+}
+
+@keyframes heartPulse {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.12); }
+  100% { transform: scale(1); }
+}
+
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.slide-title {
+  font-size: 21px;
+  font-weight: 700;
+  color: var(--purple-800);
+  line-height: 1.35;
+  margin-bottom: 10px;
+}
+
+/* Garis Pembatas Cantik */
+.slide-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 220px;
+  margin: 0 auto 15px auto;
+}
+
+.slide-divider .line {
+  flex: 1;
+  height: 1.5px;
+  background: linear-gradient(90deg, transparent, var(--purple-300), transparent);
+}
+
+.slide-divider .dot {
+  font-size: 14px;
+}
+
+/* Pesan Teks Dalam Slide */
+.slide-message {
+  font-size: 15px;
+  line-height: 1.68;
+  color: #3b0764;
+  margin-bottom: 11px;
+  font-weight: 400;
+}
+
+.slide-message.secondary {
+  font-size: 14px;
+  color: #581c87;
+  opacity: 0.95;
+  margin-bottom: 14px;
+}
+
+.slide-message.gombal-text {
+  font-size: 16px;
+  color: var(--purple-900);
+  padding: 10px 15px;
+  background: rgba(243, 232, 255, 0.65);
+  border-radius: 16px;
+  border-left: 3.5px solid var(--purple-500);
+}
+
+.slide-message strong {
+  color: var(--purple-700);
+  font-weight: 700;
+}
+
+.slide-footer-note {
+  margin-top: 6px;
+  background: rgba(245, 243, 255, 0.85);
+  border: 1px solid var(--purple-200);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--purple-600);
+}
+
+/* Tombol Peluk Khusus Slide Terakhir */
+.hug-button-container {
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.btn-hug {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #a855f7 0%, #7e22ce 100%);
+  color: var(--white);
+  border: none;
+  padding: 11px 24px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: var(--font-main);
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(126, 34, 206, 0.35);
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease;
+  will-change: transform;
+}
+
+.btn-hug:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 8px 24px rgba(126, 34, 206, 0.45);
+}
+
+.btn-hug:active {
+  transform: scale(0.97);
+}
+
+.btn-hug .hug-icon {
+  font-size: 18px;
+}
+
+.hug-feedback {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--purple-700);
+  background: #f3e8ff;
+  border: 1px solid var(--purple-300);
+  padding: 8px 16px;
+  border-radius: 20px;
+  display: none;
+  animation: popIn 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes popIn {
+  from { opacity: 0; transform: scale(0.88); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* ==========================================================
+   NAVIGASI (TOMBOL KEMBALI / LANJUT & DOTS)
+   ========================================================== */
+.card-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 22px;
+  padding-top: 16px;
+  border-top: 1.5px dashed rgba(216, 180, 254, 0.6);
+}
+
+.nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 100%);
+  color: var(--purple-800);
+  border: 1.4px solid var(--purple-300);
+  padding: 9px 18px;
+  border-radius: 25px;
+  font-size: 13.5px;
+  font-weight: 700;
+  font-family: var(--font-main);
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(147, 51, 234, 0.12);
+  transition: all 0.2s ease;
+  min-height: 42px; /* Nyaman disentuh di layar HP */
+}
+
+.nav-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #a855f7 0%, #7e22ce 100%);
+  color: var(--white);
+  border-color: var(--purple-600);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(126, 34, 206, 0.3);
+}
+
+.nav-btn:active:not(:disabled) {
+  transform: scale(0.96);
+}
+
+.nav-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.nav-btn .btn-arrow {
+  font-size: 12px;
+  line-height: 1;
+}
+
+/* Dots Indikator */
+.dots-container {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.dot-indicator {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--purple-200);
+  border: 1.5px solid var(--purple-300);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  min-width: 9px;
+}
+
+.dot-indicator.active {
+  width: 24px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #a855f7 0%, #7e22ce 100%);
+  border-color: var(--purple-500);
+  box-shadow: 0 2px 8px rgba(147, 51, 234, 0.35);
+}
+
+/* Catatan Cinta Bawah */
+.footer-love-note {
+  margin-top: 20px;
+  text-align: center;
+  color: var(--purple-100);
+  font-size: 13px;
+  font-weight: 500;
+  text-shadow: 0 2px 8px rgba(31, 8, 61, 0.6);
+  opacity: 0.95;
+}
+
+/* ==========================================================
+   DERETAN BUNGA JEJER UNGU & PUTIH (MARQUEE SMOOTH 60 FPS)
+   ========================================================== */
+.flower-marquee-section {
+  position: relative;
+  width: 100%;
+  height: 95px;
+  margin-top: auto; /* Selalu stay di paling bawah halaman/konten tanpa pernah menutupi tulisan */
+  z-index: 5;
+  pointer-events: none;
+  overflow: hidden;
+  transform: translateZ(0);
+}
+
+.flower-marquee-track {
+  display: flex;
+  width: max-content;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  animation: moveFlowersRightToLeft 34s linear infinite;
+}
+
+@keyframes moveFlowersRightToLeft {
+  0%   { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-50%, 0, 0); }
+}
+
+.flower-row-set {
+  display: flex;
+  align-items: flex-end;
+  gap: 16px;
+  padding-right: 16px;
+}
+
+.flower-svg-item {
+  flex-shrink: 0;
+  display: inline-block;
+  height: 86px;
+  width: auto;
+  transform-origin: bottom center;
+  animation: flowerGentleSway 3.6s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+@keyframes flowerGentleSway {
+  0%   { transform: rotate(-2.5deg); }
+  100% { transform: rotate(2.5deg); }
+}
+
+/* ==========================================================
+   OPTIMASI KHUSUS HP (MOBILE PORTRAIT / HP KENTANG)
+   ========================================================== */
+  /* Musik Widget Mini & Ramping di Layar HP (Super Ringkas & Tidak Menutupi Teks) */
+  .music-player-widget {
+    top: 10px;
+    right: 10px;
+  }
+  
+  .turntable-box {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    border-width: 1.2px;
+  }
+
+  .vinyl-disc {
+    width: 34px;
+    height: 34px;
+  }
+
+  .vinyl-label {
+    width: 14px;
+    height: 14px;
+  }
+
+  .vinyl-icon {
+    font-size: 7px;
+  }
+
+  .vinyl-center-hole {
+    width: 3px;
+    height: 3px;
+  }
+
+  .tonearm {
+    width: 16px;
+    height: 24px;
+    top: 3px;
+    right: 3px;
+  }
+
+  .arm-base {
+    width: 7px;
+    height: 7px;
+  }
+
+  .arm-body {
+    height: 19px;
+    width: 2px;
+    top: 4px;
+    right: 2px;
+  }
+
+  .arm-head {
+    width: 5px;
+    height: 3.5px;
+  }
+
+  /* Di HP sembunyikan pill teks agar pemutar musik murni berupa piringan vinyl mini 42px */
+  .music-status-pill {
+    display: none !important;
+  }
+
+  .music-player-widget.is-scrolled {
+    opacity: 0.75;
+    transform: scale(0.9);
+  }
+
+  /* Padding Konten Utama di HP: Rapi, Pas, dan Bebas Menumpuk */
+  .main-container {
+    padding: 75px 14px 16px 14px;
+  }
+
+  .top-badge {
+    font-size: 12px;
+    padding: 6px 16px;
+    margin-bottom: 14px;
+    max-width: calc(100% - 60px); /* Aman dan tidak bertabrakan dengan pemutar musik mini */
+  }
+
+  /* Kartu Kotak Rounded Lebih Pas di Layar HP */
+  .sweet-card {
+    padding: 24px 18px 20px 18px;
+    border-radius: 24px;
+  }
+
+  /* Emoji Sudut Lebih Kecil Agar Tidak Menutupi Header */
+  .card-corner-decor {
+    font-size: 16px;
+  }
+
+  .card-corner-decor.top-left { top: 10px; left: 12px; }
+  .card-corner-decor.top-right { top: 10px; right: 12px; }
+  .card-corner-decor.bottom-left { bottom: 10px; left: 12px; }
+  .card-corner-decor.bottom-right { bottom: 10px; right: 12px; }
+
+  .card-header {
+    margin-bottom: 14px;
+    padding-bottom: 10px;
+  }
+
+  .slide-indicator-badge {
+    font-size: 11.5px;
+    padding: 5px 12px;
+  }
+
+  .slide-counter-wrapper {
+    font-size: 11px;
+    padding: 4px 9px;
+  }
+
+  .slides-viewport {
+    min-height: 260px;
+  }
+
+  .slide-icon-burst {
+    margin-bottom: 8px;
+  }
+
+  .pulse-emoji {
+    font-size: 38px;
+  }
+
+  .sub-emoji {
+    font-size: 16px;
+    top: -2px;
+    right: -10px;
+  }
+
+  .slide-title {
+    font-size: 17.5px;
+    margin-bottom: 8px;
+  }
+
+  .slide-divider {
+    margin: 0 auto 12px auto;
+  }
+
+  .slide-message {
+    font-size: 13.8px;
+    line-height: 1.62;
+    margin-bottom: 9px;
+  }
+
+  .slide-message.secondary {
+    font-size: 13px;
+    margin-bottom: 11px;
+  }
+
+  .slide-message.gombal-text {
+    font-size: 14.5px;
+    padding: 8px 12px;
+  }
+
+  .slide-footer-note {
+    font-size: 11.5px;
+    padding: 5px 11px;
+  }
+
+  .btn-hug {
+    padding: 10px 18px;
+    font-size: 13px;
+  }
+
+  /* Tombol Navigasi Nyaman Jempol */
+  .card-navigation {
+    margin-top: 18px;
+    padding-top: 14px;
+  }
+
+  .nav-btn {
+    padding: 8px 14px;
+    font-size: 12.5px;
+  }
+
+  .dot-indicator {
+    width: 8px;
+    height: 8px;
+  }
+
+  .dot-indicator.active {
+    width: 20px;
+  }
+
+  .footer-love-note {
+    font-size: 11.5px;
+    margin-top: 16px;
+    padding: 0 10px;
+  }
+
+  .flower-marquee-section {
+    position: relative;
+    width: 100%;
+    height: 75px;
+    margin-top: auto;
+    z-index: 5;
+  }
+
+  .flower-svg-item {
+    height: 68px;
+    width: auto;
+  }
+}
